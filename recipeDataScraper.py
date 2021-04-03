@@ -37,6 +37,7 @@ for index, link in enumerate(recipeLinks):
     scrapedData = scrape_me(link)
 
     recipeDataJSON["title"] = foodClassesListClean[index]
+    recipeDataJSON["recipe_code"] = foodClassesList[index].strip("\n")
     recipeDataJSON["instructions"] = scrapedData.instructions()
     recipeDataJSON["ingredients"] = scrapedData.ingredients()
     recipeDataJSON["yields"] = scrapedData.yields()
